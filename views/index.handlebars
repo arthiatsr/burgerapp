@@ -1,0 +1,28 @@
+<img src="https://www.seriouseats.com/recipes/images/2015/07/20150702-sous-vide-hamburger-anova-primary.jpg" width="200" height="200">
+<h1>Eat a Burger!!!</h1>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burger/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burger/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<form class="create-form">  
+  
+  <div class="form-group">
+    <label for="ca">burger Name:</label>
+    <input type="text" id="ca" name="burgername">
+  </div>
+  <button type="submit">Submit</button>
+  <h4>Enter a burger you want to eat and Click the submit button</h4>
+</form>
